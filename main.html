@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top-controls">
+    <div class="relogio-input">
+      <label for="tempo-to">Selecione a data</label>
+      <input type="date" name="tempo-to" class="tempo-to" id="tempo-to" value="" onchange="calctempo(this.value)">
+    </div>
+
+    <div class="config-wrapper">
+      <button class="config-toggle" id="config-toggle" type="button" aria-label="Abrir configurações">⚙️</button>
+      <div class="config-panel" id="config-panel">
+        <h3>Configurações</h3>
+
+        <label>
+          <span>Fonte</span>
+          <select id="font-family">
+            <option value="'Montserrat', sans-serif">Montserrat</option>
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="'Courier New', monospace">Courier New</option>
+            <option value="'Times New Roman', serif">Times New Roman</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Tamanho</span>
+          <input type="range" id="font-size" min="25" max="80" value="36">
+        </label>
+
+        <label>
+          <span>Layout</span>
+          <select id="layout">
+            <option value="horizontal">Horizontal</option>
+            <option value="vertical">Vertical</option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="contador">
+    <div class="relogio-coluna">
+      <p class="relogio-dia relogio-tempo">0</p>
+      <p class="relogio-label">Dias</p>
+    </div>
+
+    <div class="relogio-coluna">
+      <p class="relogio-horas relogio-tempo">0</p>
+      <p class="relogio-label">Horas</p>
+    </div>
+
+    <div class="relogio-coluna">
+      <p class="relogio-minutos relogio-tempo">0</p>
+      <p class="relogio-label">Minutos</p>
+    </div>
+
+    <div class="relogio-coluna">
+      <p class="relogio-segundos relogio-tempo">0</p>
+      <p class="relogio-label">Segundos</p>
+    </div>
+  </div>
+
+  <script src="sitema.js"></script>
+</body>
+</html>

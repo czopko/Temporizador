@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-family: 'Montserrat', sans-serif;
+  --font-size: 36px;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  line-height: 1rem;
+  letter-spacing: 0.08rem;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.4rem;
+  font-weight: inherit;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: fundoAnimado 12s ease infinite;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 20px;
+  color: white;
+}
+
+@keyframes fundoAnimado {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.top-controls {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.relogio-input {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 1.2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  min-width: 220px;
+}
+
+.config-wrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+.config-toggle {
+  border: none;
+  background: rgba(0, 0, 0, 0.25);
+  color: rgb(81, 184, 41);
+  font-size: 2rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
+.config-panel {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 1.2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  min-width: 220px;
+  display: none;
+  z-index: 10;
+}
+
+.config-panel.open {
+  display: block;
+}
+
+.relogio-input label,
+.config-panel h3,
+.config-panel label span {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: white;
+  font-weight: 600;
+}
+
+.config-panel label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.8rem;
+}
+
+.config-panel select,
+.config-panel input[type="range"],
+.relogio-input input {
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  padding: 0.0rem;
+  font-family: inherit;
+}
+
+.relogio-input input {
+  font-size: 1.5rem;
+  color: #010101;
+}
+
+.container {
+ position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  min-height: calc(var(--font-size) * 3);
+  width: auto;
+  max-width: 100%;
+  padding: 1em;
+  background-color: transparent;
+  border-radius: 3px;
+  box-shadow: none;
+  font-family: var(--font-family);
+}
+
+.container.layout-vertical {
+  flex-direction: column;
+  height: auto;
+  gap: 1.5rem;
+}
+
+.container.layout-vertical .relogio-coluna {
+  margin-right: 0;
+}
+
+.container.layout-vertical .relogio-coluna::after {
+  display: none;
+}
+
+.relogio-coluna {
+  margin-right: calc(var(--font-size) * 1.5);
+  text-align: center;
+  position: relative;
+}
+
+.relogio-coluna::after {
+  content: ':';
+  display: block;
+  font-size: var(--font-size);
+  font-weight: 200;
+  color: #131313;
+  position: absolute;
+  top: 0;
+  right: calc(var(--font-size) * -0.8);
+  line-height: 1;
+}
+
+.relogio-coluna:last-child {
+  margin-right: 0;
+}
+
+.relogio-coluna:last-child::after {
+  display: none;
+}
+
+.relogio-label {
+  padding-top: 0.3em;
+  text-transform: uppercase;
+  color: #131313;
+  font-size: calc(var(--font-size) * 0.35);
+  text-align: center;
+  border-top: 1px solid rgba(19, 19, 19, 0.5);
+  font-family: var(--font-family);
+}
+
+.relogio-tempo {
+  color: #131313;
+  font-size: var(--font-size);
+  line-height: 1;
+  font-family: var(--font-family);
+}
+
+.done {
+  color: #fff;
+  font-weight: 600;
+}
